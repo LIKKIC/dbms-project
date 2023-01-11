@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="/rental_link.css">
+</head>
+
+    <header>
+        <h1 id="h1">
+            <a href="home"><img src="img/logo.jpg" alt="logo" id="logo" ></a>
+            RENTAL LINK</h1>
+        
+        <!-- <hr> -->
+        <nav class="navbar">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="listofrooms">Back</a></li>
+                <!-- <li><a href="signup.html">Login</a></li> -->
+                <!-- <li><a href="rental_link.html">SignUp</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <body id="color">
+        
+    
+    <div class="heading">
+        <h1>PG DETAILS</h1>
+    </div>
+    <div class="pgdet">
+        <div class="pgname"><h1 class="pgname"><%- Room[0].Name %> PG</h1></div>
+        <hr>
+        <p>PG_ID  is <%- Room[0].PG_ID %></p>
+        <hr>
+        <p>Located near <%- Room[0].landmark %></p>
+        <hr>
+        <p>Total number of rooms present are <%- Room[0].No_Rooms %> out of which <%- Room[0].Rooms_vac %> are vacant</p>
+        <hr>
+        <p>Address: <%- Room[0].Address %></p>
+        <hr>
+        <p>Facilities provided are <%- Room[0].facilities %></p>
+        <hr>
+        <p>Food provided are <%- Room[0].foods %></p>
+        <hr>
+    </div>
+</div>
+    </section>
+    <!-- <footer>
+        <div class="center">
+            Copyright &copy; www.RentalLink.com. All rights reserved
+        </div>
+    </footer> -->
+</body>
+    <script src="rental_link.js">
+
+    </script>
+
+</html>

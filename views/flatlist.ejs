@@ -1,0 +1,62 @@
+<!-- flatlist.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rental_link.css">
+    <title>Room List</title>
+    
+</head>
+<header>
+    <h1 id="h1">
+        <a href="home"><img src="/img/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL LINK
+    </h1>
+
+    <!-- <hr> -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <!-- <li><a href="#contact">ContactUs</a></li> -->
+            <!-- <li><a href="tenantlogin">Login</a></li> -->
+            <li><a href="listofrooms">PG's</a></li> 
+             <!-- <li><a href="tenant.html">Tenant</a></li> --> 
+        </ul>
+    </nav>
+</header>
+<div>
+<body id="color">
+    <div class="heading">
+        <h1>Search here</h1>
+    </div>
+    <form action="/searchflat">
+        <input type="search" name="landmark" placeholder="Search by landmark" class="bar">
+        <input type="submit" value="Search" class="bar" id="bt">
+    </form>
+    <h1 class="heading">Room List</h1>
+    <table border="1" width="100%" class="table">
+        <tr>
+            <th class="th">Name</th>
+            <th class="th">Landmark</th>
+            <th class="th">Address</th>
+        </tr>
+    
+    <% if(Room.length>0){ %>
+        <% for(var i = 0;i < Room.length;i++){%>
+            <tr class="tr">
+                <td ><a id="roomlink" href="/flat<%= Room[i].Name %>"><%- Room[i].Name %></a></td>
+                <td><%- Room[i].landmark %></td>
+                <td><%- Room[i].Address %></td>
+            </tr >
+            <%} %>
+    <% }else{ %>
+            <tr>
+                <td>Data not found</td>
+            </tr>
+     <% } %>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!-- tenantsignup.ejs  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="/rental_link.css">
+</head>
+
+<header>
+    <h1 id="h1">
+        <a href="home"><img src="/img/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL LINK
+    </h1>
+
+    <!-- <hr> -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <!-- <li><a href="#contact">ContactUs</a></li> -->
+            <li><a href="tenantlogin">Login</a></li>
+            <!-- <li><a href="tenantsignup">SignUp</a></li> -->
+            <!-- <li><a href="tenant.html">Tenant</a></li> -->
+        </ul>
+    </nav>
+</header>
+
+<body>
+
+
+    <section class="body">
+        <div class="register" id="re">
+            <form action="/tenantsignup" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="emailid" placeholder="Enter email_id">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="ph" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="pass" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn" id="s">Sign up</button>
+            </form>
+            <p class="already">already registered please login</p>
+            <div>
+            <!-- <button type="submit" class="btn" id="tl">Login</button> -->
+        </div>
+        </div>
+        <!-- <div class="login" id="lo">
+        <form action="">
+            <div class="form-group">
+                <input type="text" name="" placeholder="Enter your username">
+            </div>
+        
+            <div class="form-group">
+                <input type="password" name="" placeholder="Enter your password">
+            </div>
+            <button class="btn" id="s1">Sign up</button>
+            <button class="btn" id="l1">Login</button>
+        </form>
+    </div> -->
+    </section>
+
+   
+    <footer>
+        <div class="center">
+            Copyright &copy; www.RentalLink.com. All rights reserved
+        </div>
+    </footer>
+    <script src="rental_link.js">
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!-- roomlist.ejs  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rental_link.css">
+    <title>Room List</title>
+</head>
+<header>
+    <h1 id="h1">
+        <a href="home"><img src="/img/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL LINK
+    </h1>
+
+    <!-- <hr> -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <!-- <li><a href="#contact">ContactUs</a></li> -->
+            <li><a href="tenantlogin">Login</a></li>
+            <li><a href="tenantsignup">SignUp</a></li>
+            <!-- <li><a href="tenant.html">Tenant</a></li> -->
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <h1>Room List</h1>
+    <table border="1" width="100%" class="table">
+        <tr>
+            <th>Name</th>
+            <th>Landmark</th>
+            <th>Address</th>
+        </tr>
+    
+    <% if(Room.length>0){ %>
+        <% for(var i = 0;i < Room.length;i++){%>
+            <tr>
+                <td><%- Room[i].Name %></td>
+                <td><%- Room[i].landmark %></td>
+                <td><%- Room[i].Address %></td>
+            </tr>
+            <%} %>
+    <% }else{ %>
+            <h1>Data not found</h1>
+     <% } %>
+    </table>
+
+</body>
+</html>

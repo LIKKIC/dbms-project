@@ -1,0 +1,169 @@
+<!-- ownerprofile.ejs  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Link</title>
+    <link rel="stylesheet" href="/rental_link.css">
+</head>
+
+<header>
+    <h1 id="h1">
+        <a href="home"><img src="img/logo.jpg" alt="logo" id="logo"></a>
+        RENTAL LINK
+    </h1>
+
+    <!-- <hr> -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="home">Home</a></li>
+            <!-- <li><a href="#contact">ContactUs</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="tenant.html">Tenant</a></li> -->
+            <li><a href="ownerlogin">Back</a></li> 
+        </ul>
+    </nav>
+</header>
+
+
+<body id="color">
+
+        <!-- <div class="container"> -->
+            <!-- <div class="subtitle"> -->
+                <!-- <div class="heading">
+                    <h1>Profile</h1>
+                </div>
+             </div> -->
+            <!-- <table class="table" border="1" width="80%">
+                <tr>
+                    <th class="th">Name</th>
+                    <th class="th">Email ID</th>
+                    <th class="th">Contact</th>
+                    <th class="th">Address</th>
+                    <th class="th">Owner ID</th>
+                </tr>
+                
+                <% if(o.length>0){ %>
+                    <% for(var i = 0;i < o.length;i++){%>
+                        <tr>
+                            <td ><%- o[i].Name %></td>
+                            <td><%- o[i].email_ID %></td>
+                            <td><%- o[i].contact %></td>
+                            <td><%- o[i].address %></td>
+                            <td><%- o[i].Owner_ID %></td>
+                        </tr>
+                        <%} %>
+                <% }else{ %>
+                        <tr>
+                            <td>Data not found</td>
+                        </tr>
+                 <% } %>
+                   
+            </table>  -->
+
+            <!-- <div class="view">
+                <form action="/pg"><input type="submit" value="pg" class="bar" id="bt"></form>
+                <form action="/flat"><input type="submit" value="flat" class="bar" id="bt"></form>
+            </div> -->
+            
+            <div class="prohead">
+                <h1>Profile</h1>
+            </div>
+            <div class="ownerdet">
+                <div class="ownername"><p class="ownername"> Name:<%- o[0].Name %> </p></div>
+                <hr>
+                <p>email_ID  is <%- o[0].email_ID %></p>
+                <hr>
+                <p>Contact Number : <%- o[0].contact %></p>
+                <hr>
+                <p>Address: <%- o[0].Address %></p>
+                <hr>
+                <p>Owner ID : <%- o[0].Owner_ID %></p>
+                <hr>
+            </div>
+
+            
+            <div class="heading">
+                <h1>PG's</h1>
+            </div>
+            
+            <table  border="1" class="profile_page">
+                <tr class="tr">
+                    <th class="th">Name</th>
+                    <th class="th">Landmark</th>
+                    <th class="th">Address</th>
+                    <th class="th" >Actions</th>
+                </tr>
+            
+            <% if(Room.length>0){ %>
+                <% for(var i = 0;i < Room.length;i++){%>
+                    <tr class="tr">
+                        <td > <a id="roomlink" href="/pg<%= Room[i].Name %>"><%- Room[i].Name %></a></td>
+                        <td><%- Room[i].landmark %></td>
+                        <td><%- Room[i].Address %></td>
+                        <td>
+                            <a class="delete" href="/deletepg?PG_ID=<%- Room[i].PG_ID %>">delete</a>
+                            <!-- <a href="/updatepg?PG_ID=<%- Room[i].PG_ID %>">update</a> -->
+                        </td>
+                    </tr>
+                    <%} %>
+            <% }else{ %>
+                    <tr>
+                        <td>Data not found</td>
+                    </tr>
+             <% } %>
+            </table>
+
+            <h1 class="heading">Flats</h1>
+            <table border="1" width="100%" class="profile_page">
+                <tr>
+                    <th class="th">Name</th>
+                    <th class="th">Landmark</th>
+                    <th class="th">Address</th>
+                    <th class="th" >Actions</th>
+                </tr>
+            
+            <% if(Room.length>0){ %>
+                <% for(var i = 0;i < flat.length;i++){%>
+                    <tr class="tr">
+                        <td ><a id="roomlink" href="/flat<%= flat[i].Name %>"><%- flat[i].Name %></a></td>
+                        <td><%- flat[i].landmark %></td>
+                        <td><%- flat[i].address %></td>
+                        <td>
+                            <a id="flatdel" class="delete" href="/deleteflat?Flat_ID=<%- flat[i].Flat_ID %>">delete</a>
+                            <!-- <a href="updatepg">update</a> -->
+                        </td>
+                    </tr >
+                    <%} %>
+            <% }else{ %>
+                    <tr>
+                        <td>Data not found</td>
+                    </tr>
+             <% } %>
+            </table>
+
+        <!-- </div> -->
+        <!-- <div class="continue">
+            <h2>CONTINUE AS</h2>
+            
+                <button type="submit" class="choice" id="T">TENANT</button>
+                <button type="submit" class="choice" id="O">OWNER</button>
+
+            
+        </div> -->
+       
+<!-- </section> -->
+<!-- <footer>
+    <div class="center">
+        Copyright &copy; www.RentalLink.com. All rights reserved
+    </div>
+</footer> -->
+<script src="rental_link.js">
+
+</script>
+</body>
+
+</html>
